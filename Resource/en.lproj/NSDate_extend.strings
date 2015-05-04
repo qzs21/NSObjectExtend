@@ -1,0 +1,51 @@
+/* 
+  NSDate_extend.strings
+  NSObject+extend
+
+  Created by Steven on 14/12/30.
+  Copyright (c) 2014年 Neva. All rights reserved.
+*/
+
+
+"yyyy-%@-%@ %@:mm" = "yyyy-%@-%@ %@:mm";
+"just now" = "just now";
+"%d minute ago" = "%d minute ago";
+"%d minutes ago" = "%d minutes ago";
+"yesterday %@" = "yesterday %@";
+"before yesterday %@" = "before yesterday %@";
+"%@-%@ %@:mm" = "%@-%@ %@:mm";
+"yyyy-%@-%@ %@:mm" = "yyyy-%@-%@ %@:mm";
+
+
+
+"the future" = "the future";
+"just now" = "just now";
+"half an hour ago" = "half an hour ago";
+"yesterday" = "yesterday";
+"before yesterday" = "before yesterday";
+"%d days ago" = "%d days ago";
+
+
+"Sunday" = "Sun";
+"Monday" = "Mon";
+"Tuesday" = "Tue";
+"Wednesday" = "Wed";
+"Thursday" = "Thu";
+"Friday" = "Fri";
+"Saturday" = "Sat";
+
+
+"January" = "Jan.";
+"February" = "Feb.";
+"March" = "Mar.";
+"April" = "Apr.";
+"May" = "May";
+"June" = "Jun.";
+"July" = "Jul.";
+"August" = "Aug.";
+"September" = "Sept.";
+"October" = "Oct.";
+"Novemver" = "Nov.";
+"December" = "Dec.";
+
+"day" = "";
