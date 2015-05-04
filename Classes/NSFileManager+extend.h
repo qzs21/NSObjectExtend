@@ -6,6 +6,23 @@
 //
 //
 
+
+
+/**************************
+ 
+ Author LiuXiaoBin
+ 
+ //
+ //  SandboxFile.h
+ //  SKY
+ //
+ //  Author LiuXiaoBin   Created by mac  on 12-9-19.
+ //  Copyright (c) 2012年 SKY. All rights reserved.
+ //  Sand Box foundation Class
+ 
+ ***************************/
+
+
 #import <Foundation/Foundation.h>
 
 @interface NSFileManager (NSFileManager_extend)
