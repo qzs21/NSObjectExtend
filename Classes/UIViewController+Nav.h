@@ -140,27 +140,68 @@
 
 
 
-/// 动画过渡，替换栈内控制器, 通过字符串索引到控制器
-- (void)replaceViewControllerKey:(NSString *)viewControllerKey
+/**
+ *  动画过渡，替换栈内控制器, 通过字符串索引到控制器
+ *
+ *  @param viewControllerKey   要替代的viewController 在 storyboard 中的 key
+ *  @param toStoryboardKey     storyboard的名字
+ *  @param toViewControllerKey viewController 在 storyboard 中的 key
+ *  @param param               界面传参
+ *  @param animated            是否动画
+ *
+ *  @return 已经初始化的控制器
+ */
+- (id)replaceViewControllerKey:(NSString *)viewControllerKey
                  toStoryboardKey:(NSString *)toStoryboardKey
              toViewControllerKey:(NSString *)toViewControllerKey
                            param:(id)param
                         animated:(UINavigationControllerAnimated)animated;
 
-/// 动画过渡，替换栈内控制器，self 到 新的指定控制器
-- (void)replaceToStoryboardKey:(NSString *)toStoryboardKey
+
+/**
+ *  动画过渡，替换栈内控制器，self 到 新的指定控制器
+ *
+ *  @param toStoryboardKey     storyboard的名字
+ *  @param toViewControllerKey viewController 在 storyboard 中的 key
+ *  @param param               界面传参
+ *  @param animated            是否动画
+ *
+ *  @return 已经初始化的控制器
+ */
+- (id)replaceToStoryboardKey:(NSString *)toStoryboardKey
            toViewControllerKey:(NSString *)toViewControllerKey
                          param:(id)param
                       animated:(UINavigationControllerAnimated)animated;
 
-/// 动画过渡，替换栈内控制器， 栈内所有控制器出栈，新的指定控制器如栈
-- (void)replaceAllToStorayboardKey:(NSString *)toStoryboardKey
+
+/**
+ *  动画过渡，替换栈内控制器， 栈内所有控制器出栈，新的指定控制器如栈
+ *
+ *  @param toStoryboardKey     storyboard的名字
+ *  @param toViewControllerKey viewController 在 storyboard 中的 key
+ *  @param param               界面传参
+ *  @param animated            是否动画
+ *
+ *  @return 已经初始化的控制器
+ */
+- (id)replaceAllToStorayboardKey:(NSString *)toStoryboardKey
                toViewControllerKey:(NSString *)toViewControllerKey
                              param:(id)param
                           animated:(UINavigationControllerAnimated)animated;
 
-/// 动画过渡，替换underViewController之上的控制器, 通过key索引
-- (void)replaceUnderViewControllerKey:(NSString *)underViewControllerKey
+
+/**
+ *  动画过渡，替换underViewController之上的控制器, 通过key索引
+ *
+ *  @param underViewControllerKey underViewController 在storyboard 中的key
+ *  @param toStoryboardKey     storyboard的名字
+ *  @param toViewControllerKey viewController 在 storyboard 中的 key
+ *  @param param               界面传参
+ *  @param animated            是否动画
+ *
+ *  @return 已经初始化的控制器
+ */
+- (id)replaceUnderViewControllerKey:(NSString *)underViewControllerKey
                       toStoryboardKey:(NSString *)toStoryboardKey
                   toViewControllerKey:(NSString *)toViewControllerKey
                                 param:(id)param
