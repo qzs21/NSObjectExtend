@@ -213,7 +213,7 @@ static const char* ParentVCKey                          = "ParentVCKey";
 
 
 
-- (void)replaceViewControllerKey:(NSString *)viewControllerKey
+- (id)replaceViewControllerKey:(NSString *)viewControllerKey
                  toStoryboardKey:(NSString *)toStoryboardKey
              toViewControllerKey:(NSString *)toViewControllerKey
                            param:(id)param
@@ -224,14 +224,16 @@ static const char* ParentVCKey                          = "ParentVCKey";
     {
         UIViewController * toViewController = [self.class getViewControllerFromStoryboard:toStoryboardKey key:toViewControllerKey];
         [self.navigationController replaceViewControllerAnimated:animated formViewController:fromViewcController toViewController:toViewController, nil];
+        return toViewController;
     }
     else
     {
         NSLog(@"找不到指定类名的控制器 : %@", viewControllerKey);
+        return nil;
     }
 }
 
-- (void)replaceToStoryboardKey:(NSString *)toStoryboardKey
+- (id)replaceToStoryboardKey:(NSString *)toStoryboardKey
            toViewControllerKey:(NSString *)toViewControllerKey
                          param:(id)param
                       animated:(UINavigationControllerAnimated)animated
@@ -239,9 +241,10 @@ static const char* ParentVCKey                          = "ParentVCKey";
     UIViewController * toViewController = [self.class getViewControllerFromStoryboard:toStoryboardKey key:toViewControllerKey];
     param = param;
     [self.navigationController replaceViewControllerAnimated:animated formViewController:self toViewController:toViewController, nil];
+    return toViewController;
 }
 
-- (void)replaceAllToStorayboardKey:(NSString *)toStoryboardKey
+- (id)replaceAllToStorayboardKey:(NSString *)toStoryboardKey
                toViewControllerKey:(NSString *)toViewControllerKey
                              param:(id)param
                           animated:(UINavigationControllerAnimated)animated
@@ -249,10 +252,11 @@ static const char* ParentVCKey                          = "ParentVCKey";
     UIViewController * toViewController = [self.class getViewControllerFromStoryboard:toStoryboardKey key:toViewControllerKey];
     toViewController.param = param;
     [self.navigationController replaceAllToViewControllerAnimated:animated toViewController:toViewController, nil];
+    return toViewController;
 }
 
 /// 动画过渡，替换underViewController之上的控制器, 通过key索引
-- (void)replaceUnderViewControllerKey:(NSString *)underViewControllerKey
+- (id)replaceUnderViewControllerKey:(NSString *)underViewControllerKey
                       toStoryboardKey:(NSString *)toStoryboardKey
                toViewControllerKey:(NSString *)toViewControllerKey
                              param:(id)param
@@ -273,11 +277,14 @@ static const char* ParentVCKey                          = "ParentVCKey";
         else
         {
             [self.navigationController push:toViewController animated:animated];
+            
         }
+        return toViewController;
     }
     else
     {
         NSLog(@"找不到指定类名的控制器 : %@", underViewController);
+        return nil;
     }
 }
 
