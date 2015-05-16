@@ -109,4 +109,39 @@ static const char* IndexPathKey ="NSObject_UserInfoExtend";
     return (id)objc_getAssociatedObject(self,IndexPathKey);
 }
 
+
+#define mark - Do noce
+static const char* NSObject_DoOnceExtend ="NSObject_DoOnceExtend";
+- (NSMutableDictionary *)do_once_items
+{
+    NSMutableDictionary * items = (id)objc_getAssociatedObject(self, NSObject_DoOnceExtend);
+    if (items == nil)
+    {
+        items = [NSMutableDictionary dictionary];
+        objc_setAssociatedObject(self, NSObject_DoOnceExtend, items, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return items;
+}
+- (void)do_once:(void(^)(void))block
+{
+    [self do_once_with_key:@"self" block:block];
+}
+- (void)do_once_in_this_function:(void(^)(void))block
+{
+    NSString * functionName = [NSString stringWithFormat:@"%s", __FUNCTION__];
+    [self do_once_with_key:functionName block:block];
+}
+- (void)do_once_with_key:(NSString *)key block:(void(^)(void))block
+{
+    @synchronized(self.do_once_items)
+    {
+        if ([[self.do_once_items objectForKey:key] boolValue])
+        {
+            return;
+        }
+        block();
+        [self.do_once_items setObject:@(YES) forKey:key];
+    }
+}
+
 @end
