@@ -33,13 +33,13 @@
  */
 - (UIButton *)createAndSetRightButtonWithTitle:(NSString *)title touchUpInsideAction:(SEL)action
 {
-    UIButton * button = [UIButton buttonWithTitle:title touchUpInsideAction:action];
+    UIButton * button = [UIButton buttonWithTitle:title target:self touchUpInsideAction:action];
     [self setRightView:button];
     return button;
 }
 - (UIButton *)createAndSetLeftButtonWithTitle:(NSString *)title touchUpInsideAction:(SEL)action
 {
-    UIButton * button = [UIButton buttonWithTitle:title touchUpInsideAction:action];
+    UIButton * button = [UIButton buttonWithTitle:title target:self touchUpInsideAction:action];
     [self setLeftView:button];
     return button;
 }
@@ -55,13 +55,13 @@
  */
 - (UIButton *)createAndSetRightButtonWithNormalImage:(UIImage *)normalImage highlightedImage:(UIImage *)highlightedImage touchUpInsideAction:(SEL)action
 {
-    UIButton * button = [UIButton buttonWithNormalImage:normalImage highlightedImage:highlightedImage touchUpInsideAction:action];
+    UIButton * button = [UIButton buttonWithNormalImage:normalImage highlightedImage:highlightedImage target:self touchUpInsideAction:action];
     [self setRightView:button];
     return button;
 }
 - (UIButton *)createAndSetLeftButtonWithNormalImage:(UIImage *)normalImage highlightedImage:(UIImage *)highlightedImage touchUpInsideAction:(SEL)action
 {
-    UIButton * button = [UIButton buttonWithNormalImage:normalImage highlightedImage:highlightedImage touchUpInsideAction:action];
+    UIButton * button = [UIButton buttonWithNormalImage:normalImage highlightedImage:highlightedImage target:self touchUpInsideAction:action];
     [self setLeftView:button];
     return button;
 }

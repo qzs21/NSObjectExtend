@@ -35,6 +35,7 @@
  *  创建UIButton,根据标题大小自动设置frame.size
  *
  *  @param title  标题
+ *  @param target 回调对象
  *  @param action 点击事件
  *
  *  @return UIButton
@@ -46,6 +47,7 @@
  *
  *  @param normalImage      默认图片
  *  @param highlightedImage 高亮图片
+ *  @param target           回调对象
  *  @param action           点击事件
  *
  *  @return UIButton
