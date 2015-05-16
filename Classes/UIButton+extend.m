@@ -48,7 +48,7 @@
  *
  *  @return UIButton
  */
-+ (UIButton *)buttonWithTitle:(NSString *)title touchUpInsideAction:(SEL)action
++ (UIButton *)buttonWithTitle:(NSString *)title target:(id)target touchUpInsideAction:(SEL)action;
 {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -67,7 +67,7 @@
     }
     
     [button setFrame:CGRectMake(0, 0, size.width, size.height)];
-    [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     return button;
 }
@@ -83,7 +83,8 @@
  */
 + (UIButton *)buttonWithNormalImage:(UIImage *)normalImage
                    highlightedImage:(UIImage *)highlightedImage
-                touchUpInsideAction:(SEL)action
+                             target:(id)target
+                touchUpInsideAction:(SEL)action;
 {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -97,7 +98,7 @@
     }
     
     [button setFrame:CGRectMake(0, 0, size.width, size.height)];
-    [button addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
     return button;
 }

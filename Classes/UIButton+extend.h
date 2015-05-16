@@ -39,7 +39,7 @@
  *
  *  @return UIButton
  */
-+ (UIButton *)buttonWithTitle:(NSString *)title touchUpInsideAction:(SEL)action;
++ (UIButton *)buttonWithTitle:(NSString *)title target:(id)target touchUpInsideAction:(SEL)action;
 
 /**
  *  创建UIButton,根据normalImage大小自动设置frame.size
@@ -52,6 +52,7 @@
  */
 + (UIButton *)buttonWithNormalImage:(UIImage *)normalImage
                    highlightedImage:(UIImage *)highlightedImage
+                             target:(id)target
                 touchUpInsideAction:(SEL)action;
 
 @end
