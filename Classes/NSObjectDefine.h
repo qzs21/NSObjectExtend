@@ -40,6 +40,22 @@ return self; \
 #define LX_GTMOBJECT_SINGLETON_BOILERPLATE(_object_name_) LX_GTMOBJECT_SINGLETON_BOILERPLATE_WITH_SHARED(_object_name_, shared)
 
 
+/**
+ *  属性的Get方法，确保对象不为空，延迟初始化
+ *
+ *  @param property 属性名
+ *  @param type     属性类型
+ */
+#define PROPERTY_GET_METHOD(property, type) \
+- (type *)property \
+{ \
+if (_##property == nil) { \
+_##property = [[type alloc] init]; \
+} \
+return _##property; \
+}
+
+
 
 /**
  *  获取屏幕宽度、高度、中心点

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'NSObjectExtend'
-  s.version  = '1.3.2'
+  s.version  = '1.3.3'
   s.license  = { :type => 'MIT' }
   s.summary  = 'NS系列库扩充方法.'
   s.homepage = 'http://blog.isteven.cn'
@@ -22,5 +22,4 @@ Pod::Spec.new do |s|
       'Classes/*.{h,m}',
     ]
   end
-
 end
