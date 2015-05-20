@@ -126,11 +126,6 @@ static const char* NSObject_DoOnceExtend ="NSObject_DoOnceExtend";
 {
     [self do_once_with_key:@"self" block:block];
 }
-- (void)do_once_in_this_function:(void(^)(void))block
-{
-    NSString * functionName = [NSString stringWithFormat:@"%s", __FUNCTION__];
-    [self do_once_with_key:functionName block:block];
-}
 - (void)do_once_with_key:(NSString *)key block:(void(^)(void))block
 {
     @synchronized(self.do_once_items)

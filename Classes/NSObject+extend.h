@@ -90,12 +90,6 @@
  *  @param block 执行的代码块
  */
 - (void)do_once:(void(^)(void))block;
-/**
- *  在本对象的某个方法内调用，即使连续重复调用，也只执行一次
- *
- *  @param block 执行的代码块
- */
-- (void)do_once_in_this_function:(void(^)(void))block;
 
 /**
  *  在对象生命周期内，使用key区分，如果key一样，只有以一个调用的位置会被执行
@@ -104,6 +98,5 @@
  *  @param block 执行的代码块
  */
 - (void)do_once_with_key:(NSString *)key block:(void(^)(void))block;
-
 
 @end
