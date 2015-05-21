@@ -15,8 +15,23 @@
 #define BOOLToString(value)             IntToString(value)
 
 
-/// 保证字符串非空，如果字符串长度为0，返回 @"-"
+/**
+ *  保证字符串长度不为0
+ *
+ *  @param __str     需要检测的字符串
+ *  @param __replace 用来替换的字符串
+ *
+ *  @return 如果__str长度为0，返回__replace, 否则返回__str
+ */
 #define NO_EMPTY_STRING_REPLACE(__str, __replace)   ( [(__str) length] ? (__str) : (__replace) )
+
+/**
+ *  保证字符串长度不为0
+ *
+ *  @param __str 需要检测的字符串
+ *
+ *  @return 如果字符串长度为0，返回 @"-", 否则返回__str
+ */
 #define NO_EMPTY_STRING(__str)                      NO_EMPTY_STRING_REPLACE(__str, @"-")
 
 
@@ -29,6 +44,16 @@
  */
 #define SAVE_STRING(str)   (((str)&&![(str) isKindOfClass:NSNull.class])?[NSString stringWithFormat:@"%@",(str)]:@"")
 
+
+/**
+ *  字符串拼接
+ *
+ *  @param str1 字符串一，允许为空
+ *  @param str2 字符串二，允许为空
+ *
+ *  @return 返回拼接好的字符串
+ */
+#define STRCAT(str1, str2)  [SAVE_STRING(str1) stringByAppendingString:SAVE_STRING(str2)]
 
 
 @interface NSString (NSString_Math)
