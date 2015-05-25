@@ -22,7 +22,6 @@
 #import "UITableViewCell+extend.h"
 #import "UIImage+Stretchable.h"
 #import "UILabelWithLine.h"
-#import "UIAlertView+Blocks.h"
 #import "UITextField+extend.h"
 #import "NSException+extend.h"
 #import "UIViewController+Nav.h"
