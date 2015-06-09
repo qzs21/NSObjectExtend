@@ -7,7 +7,7 @@
 //
 
 #import "CLPlacemark+extend.h"
-#import "NSObject+extend.h"
+#import "NSString+extend.h"
 
 @implementation CLPlacemark (CLPlacemark_address)
 

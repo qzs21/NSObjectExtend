@@ -8,7 +8,7 @@
 
 #import "NSException+extend.h"
 #import "NSDate+extend.h"
-#import "NSObjectDefine.h"
+#import "NSObjectMacro.h"
 #import <objc/runtime.h>
 
 /// 已处理的日志目录

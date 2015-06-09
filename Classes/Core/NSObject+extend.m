@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+extend.h"
+#import "NSDate+extend.h"
 #import <objc/runtime.h>
 
 int GetBuildDateTime(char *szDateTime)

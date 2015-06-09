@@ -407,9 +407,11 @@
 			baseConfigurationReference = DA9E172D1720FA31F6A6B690 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = NSObjectExtend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "09ced59f-6393-4890-8016-0eddfb7f8f96";
 			};
 			name = Debug;
 		};
@@ -418,9 +420,11 @@
 			baseConfigurationReference = C6D0208F9171A3285054B741 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = NSObjectExtend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "09ced59f-6393-4890-8016-0eddfb7f8f96";
 			};
 			name = Release;
 		};
