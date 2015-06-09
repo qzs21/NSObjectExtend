@@ -1,6 +1,6 @@
-[![Pod Version](http://img.shields.io/cocoapods/v/SSObject.svg)](http://cocoadocs.org/docsets/NSObjectExtend)
-[![Pod Platform](https://img.shields.io/cocoapods/p/SSObject.svg)](http://cocoadocs.org/docsets/NSObjectExtend)
-[![License](http://img.shields.io/cocoapods/l/SSObject.svg)](http://opensource.org/licenses/MIT)
+[![Pod Version](http://img.shields.io/cocoapods/v/NSObjectExtend.svg)](http://cocoadocs.org/docsets/NSObjectExtend)
+[![Pod Platform](https://img.shields.io/cocoapods/p/NSObjectExtend.svg)](http://cocoadocs.org/docsets/NSObjectExtend)
+[![License](http://img.shields.io/cocoapods/l/NSObjectExtend.svg)](http://opensource.org/licenses/MIT)
 
 # NSObjectExtend
 `NSObjectExtend` Category for `UIKit` and `CoreLocation`. Extend very useful method.
