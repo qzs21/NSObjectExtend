@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   s.subspec 'UIKit' do |spec|
     spec.requires_arc = true
     spec.frameworks = 'UIKit'
+    spec.ios.dependency 'NSObjectExtend/Core'
     spec.source_files = [
       'Classes/UIKit/*.{h,m}',
     ]
@@ -39,6 +40,7 @@ Pod::Spec.new do |s|
   s.subspec 'CoreLocation' do |spec|
     spec.requires_arc = true
     spec.frameworks = 'CoreLocation'
+    spec.ios.dependency 'NSObjectExtend/Core'
     spec.source_files = [
       'Classes/CoreLocation/*.{h,m}',
     ]
