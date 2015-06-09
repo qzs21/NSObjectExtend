@@ -3,7 +3,7 @@
 [![License](http://img.shields.io/cocoapods/l/NSObjectExtend.svg)](http://opensource.org/licenses/MIT)
 
 # NSObjectExtend
-`NSObjectExtend` Category for `UIKit` and `CoreLocation`. Extend very useful method.
+`NSObjectExtend` Category for `Foundation`, `UIKit` and `CoreLocation`. Extend very useful method.
 
 
 # Quick start
