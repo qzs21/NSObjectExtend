@@ -7,6 +7,7 @@
 //
 
 #import "UIView+extend.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation UIView (UIView_extend)
 
@@ -53,6 +54,16 @@
             [v resignResponder];
         }
     }
+}
+
+- (UIImage *)imageSnapshot
+{
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(self.bounds.size.width, self.bounds.size.height), NO, [UIScreen mainScreen].scale);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(viewImage, nil, nil, nil);
+    return viewImage;
 }
 
 -(void)setHeight:(CGFloat)height {

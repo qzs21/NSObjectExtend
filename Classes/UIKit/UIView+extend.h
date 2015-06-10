@@ -34,6 +34,13 @@
 -(void)resignResponder;
 
 /**
+ *  获取UIView的截图
+ *
+ *  @return UIImage 图片的width和heigh，会乘以 [UIScreen mainScreen].scale
+ */
+- (UIImage *)imageSnapshot;
+
+/**
  *  限制 UIView 的宽度，计算出autolayout后的高度
  *
  */

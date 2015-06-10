@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'NSObjectExtend'
-  s.version  = '1.3.7'
+  s.version  = '1.4.0'
   s.license  = { :type => 'MIT' }
   s.summary  = 'NS系列库扩充方法.'
   s.homepage = 'http://blog.isteven.cn'
@@ -30,7 +30,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIKit' do |spec|
     spec.requires_arc = true
-    spec.frameworks = 'UIKit'
+    spec.frameworks = [
+      'UIKit',
+      'QuartzCore'
+    ]
     spec.ios.dependency 'NSObjectExtend/Core'
     spec.source_files = [
       'Classes/UIKit/*.{h,m}',
