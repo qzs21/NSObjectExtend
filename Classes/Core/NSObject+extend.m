@@ -123,9 +123,21 @@ static const char* NSObject_DoOnceExtend ="NSObject_DoOnceExtend";
     }
     return items;
 }
-- (void)do_once:(void(^)(void))block
+- (void)do_once_in_this_function:(void(^)(void))block
 {
-    [self do_once_with_key:@"self" block:block];
+    NSArray *syms = [NSThread  callStackSymbols];
+    NSString * tmp = nil;
+    for (NSString * s in syms)
+    {
+        // 调用本“方法”的“方法”
+        tmp = [NSString stringWithFormat:@"[%@ ", NSStringFromClass(self.class)];
+        if ([s isKindOfClass:NSString.class] && [s rangeOfString:tmp].location != NSNotFound)
+        {
+            [self do_once_with_key:syms[1] block:block];
+            return;
+        }
+    }
+    NSAssert(NO, @"%s 找不到堆栈上级函数", __FUNCTION__);
 }
 - (void)do_once_with_key:(NSString *)key block:(void(^)(void))block
 {

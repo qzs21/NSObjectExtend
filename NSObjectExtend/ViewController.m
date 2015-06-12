@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <NSObjectExtend.h>
 
 @interface ViewController ()
 

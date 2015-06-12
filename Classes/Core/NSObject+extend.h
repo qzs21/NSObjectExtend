@@ -64,14 +64,14 @@
  ****************/
 
 /**
- *  在本对象的生命周期内，执行一次
+ *  在本对象生命周期内，在调用本方法的方法内，只会执行一次
  *
  *  @param block 执行的代码块
  */
-- (void)do_once:(void(^)(void))block;
+- (void)do_once_in_this_function:(void(^)(void))block;
 
 /**
- *  在对象生命周期内，使用key区分，如果key一样，只有以一个调用的位置会被执行
+ *  在本对象生命周期内，使用key区分，如果key一样，只有第一个调用的位置会被执行，并且只会执行一次
  *
  *  @param key   用于区分的key
  *  @param block 执行的代码块
