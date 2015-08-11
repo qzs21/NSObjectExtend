@@ -239,7 +239,7 @@ static const char* ParentVCKey                          = "ParentVCKey";
                       animated:(UINavigationControllerAnimated)animated
 {
     UIViewController * toViewController = [self.class getViewControllerFromStoryboard:toStoryboardKey key:toViewControllerKey];
-    param = param;
+    toViewController.param = param;
     [self.navigationController replaceViewControllerAnimated:animated formViewController:self toViewController:toViewController, nil];
     return toViewController;
 }
