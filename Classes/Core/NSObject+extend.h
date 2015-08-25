@@ -64,11 +64,10 @@
  ****************/
 
 /**
- *  在本对象生命周期内，在调用本方法的方法内，只会执行一次
- *
- *  @param block 执行的代码块
+ *  获取当前函数名的字符串,（作为-do_once_with_key:block:的key使用）
+ *  使用这个宏生成的key，可以确保块在调用的函数中只执行一次
  */
-- (void)do_once_in_this_function:(void(^)(void))block;
+#define do_once_in_this_function_key [NSString stringWithFormat:@"%s", __FUNCTION__]
 
 /**
  *  在本对象生命周期内，使用key区分，如果key一样，只有第一个调用的位置会被执行，并且只会执行一次
