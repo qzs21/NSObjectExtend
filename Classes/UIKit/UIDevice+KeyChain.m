@@ -15,10 +15,10 @@
 + (NSMutableDictionary *)getKeyChainQuery:(NSString *)service
 {
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
-            (id)kSecClassGenericPassword,(id)kSecClass,
-            service, (id)kSecAttrService,
-            service, (id)kSecAttrAccount,
-            (id)kSecAttrAccessibleAfterFirstUnlock,(id)kSecAttrAccessible,
+            (id)kSecClassGenericPassword,(__bridge id)kSecClass,
+            service, (__bridge id)kSecAttrService,
+            service, (__bridge id)kSecAttrAccount,
+            (__bridge id)kSecAttrAccessibleAfterFirstUnlock,(__bridge id)kSecAttrAccessible,
             nil];
 }
 
@@ -31,9 +31,9 @@
 + (void)saveKey:(NSString *)key object:(id)object;
 {
     NSMutableDictionary *keychainQuery = [self getKeyChainQuery:key];
-    SecItemDelete((CFDictionaryRef)keychainQuery);
-    [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:object] forKey:(id)kSecValueData];
-    SecItemAdd((CFDictionaryRef)keychainQuery, NULL);
+    SecItemDelete((__bridge CFDictionaryRef)keychainQuery);
+    [keychainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:object] forKey:(__bridge id)kSecValueData];
+    SecItemAdd((__bridge CFDictionaryRef)keychainQuery, NULL);
 }
 
 /**
@@ -44,7 +44,7 @@
 + (void)deleteObjectWithKey:(NSString *)key;
 {
     NSMutableDictionary *keychainQuery = [self getKeyChainQuery:key];
-    SecItemDelete((CFDictionaryRef)keychainQuery);
+    SecItemDelete((__bridge CFDictionaryRef)keychainQuery);
 }
 
 /**
@@ -56,10 +56,10 @@
 {
     id object = nil;
     NSMutableDictionary *keychainQuery = [self getKeyChainQuery:key];
-    [keychainQuery setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];
-    [keychainQuery setObject:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];
+    [keychainQuery setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
+    [keychainQuery setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
     CFDataRef keyData = NULL;
-    if (SecItemCopyMatching((CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData) == noErr)
+    if (SecItemCopyMatching((__bridge CFDictionaryRef)keychainQuery, (CFTypeRef *)&keyData) == noErr)
     {
         @try
         {
