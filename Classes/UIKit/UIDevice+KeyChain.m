@@ -15,7 +15,7 @@
 + (NSMutableDictionary *)getKeyChainQuery:(NSString *)service
 {
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
-            (id)kSecClassGenericPassword,(__bridge id)kSecClass,
+            (__bridge id)kSecClassGenericPassword,(__bridge id)kSecClass,
             service, (__bridge id)kSecAttrService,
             service, (__bridge id)kSecAttrAccount,
             (__bridge id)kSecAttrAccessibleAfterFirstUnlock,(__bridge id)kSecAttrAccessible,
