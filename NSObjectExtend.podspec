@@ -10,18 +10,13 @@ Pod::Spec.new do |s|
     :tag => s.version
   }
   s.ios.deployment_target = '6.0'
-  s.osx.deployment_target = '10.8'
   
   s.default_subspec = 'All'
   s.subspec 'All' do |spec|
-    
-    spec.source_files = 'Classes/NSObjectExtend.h'  
-    
+    spec.source_files = 'Classes/NSObjectExtend.h'
     spec.ios.dependency 'NSObjectExtend/Core'
     spec.ios.dependency 'NSObjectExtend/UIKit'
     spec.ios.dependency 'NSObjectExtend/CoreLocation'
-
-    spec.osx.dependency 'NSObjectExtend/Core'    
   end
 
   s.subspec 'Core' do |spec|

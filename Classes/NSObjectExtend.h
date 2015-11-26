@@ -9,13 +9,5 @@
 
 
 #import "NSObject+Core.h"
-
-#if TARGET_OS_IPHONE
-
 #import "NSObject+UIKit.h"
 #import "NSObject+CoreLocation.h"
-
-#elif TARGET_OS_MAC
-// import nothing.
-#endif
-
