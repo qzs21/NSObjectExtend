@@ -16,6 +16,11 @@
 @property (nonatomic, strong) id userInfoExtend;
 
 /**
+ *  保存某个状态，比如数据模型的选中状态
+ */
+@property (nonatomic, assign) NSInteger ss_status;
+
+/**
  *  本地对象序列化成json字符串
  *
  *  @return json字符串

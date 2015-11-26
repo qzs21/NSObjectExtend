@@ -110,6 +110,14 @@ static const char* IndexPathKey ="NSObject_UserInfoExtend";
     return (id)objc_getAssociatedObject(self,IndexPathKey);
 }
 
+static const char* NSObject_ss_status_Extend ="NSObject_ss_status_Extend";
+- (void)setSs_status:(NSInteger)ss_status {
+    objc_setAssociatedObject(self, NSObject_ss_status_Extend, @(ss_status), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+- (NSInteger)ss_status {
+    return [(id)objc_getAssociatedObject(self, NSObject_ss_status_Extend) integerValue];
+}
+
 
 #define mark - Do noce
 static const char* NSObject_DoOnceExtend ="NSObject_DoOnceExtend";

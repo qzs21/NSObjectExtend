@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'NSObjectExtend'
-  s.version  = '1.7.2'
+  s.version  = '1.8.0'
   s.license  = { :type => 'MIT' }
   s.summary  = 'NS系列库扩充方法.'
   s.homepage = 'http://blog.isteven.cn'
@@ -10,13 +10,18 @@ Pod::Spec.new do |s|
     :tag => s.version
   }
   s.ios.deployment_target = '6.0'
+  s.osx.deployment_target = '10.8'
   
   s.default_subspec = 'All'
   s.subspec 'All' do |spec|
+    
     spec.source_files = 'Classes/NSObjectExtend.h'  
+    
     spec.ios.dependency 'NSObjectExtend/Core'
     spec.ios.dependency 'NSObjectExtend/UIKit'
     spec.ios.dependency 'NSObjectExtend/CoreLocation'
+
+    spec.osx.dependency 'NSObjectExtend/Core'    
   end
 
   s.subspec 'Core' do |spec|
