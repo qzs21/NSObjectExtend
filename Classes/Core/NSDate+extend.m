@@ -7,8 +7,9 @@
 //
 
 #import "NSDate+extend.h"
+#import "NSECoreConstants.h"
 
-#define NELocalizedString(key, comment)     NSLocalizedStringFromTable(key, @"NSDate_extend", comment)
+#define NELocalizedString(key, comment) NSLocalizedStringFromTableInBundle(key, @"NSDate_extend", [NSBundle bundleForClass:[NSECoreConstants class]], comment)
 
 @implementation NSDate(NSDate_extend)
 
